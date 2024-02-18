@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout plans</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+#workout-plan {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+</style>
+
+<body>
+    <header>
+        <h1>GetMovePro</h1>
+    </header>
+    <main>
+        <section id="workout-plan">
+            <h2>Today's Workout Plan</h2>
+            <ul id="exercise-list"></ul>
+        </section>
+    </main>
+    <script src="app.js">
+        document.addEventListener("DOMContentLoaded", function () {
+    // Hardcoded workout plan for the day
+    const workoutPlan = [
+        "15 minutes of warm-up exercises",
+        "30 minutes of cardio (running or cycling)",
+        "20 minutes of strength training (push-ups, squats, lunges)",
+        "10 minutes of cool-down and stretching"
+    ];
+
+    // Display workout plan in the HTML
+    const exerciseList = document.getElementById("exercise-list");
+
+    workoutPlan.forEach(function (exercise) {
+        const listItem = document.createElement("li");
+        listItem.textContent = exercise;
+        exerciseList.appendChild(listItem);
+    });
+});
+    </script>
+</body>
+</html>

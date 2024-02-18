@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goal Setting</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #goalForm {
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>GetMovePro</h1>
+
+    <div id="goalForm">
+        <h2>Set Your Goals</h2>
+        <form id="fitnessForm">
+            <label for="exerciseGoal">Exercise Goal (minutes):</label>
+            <input type="number" id="exerciseGoal" placeholder="Enter goal in minutes" required>
+
+            <label for="calorieGoal">Calorie Goal:</label>
+            <input type="number" id="calorieGoal" placeholder="Enter goal in calories" required>
+
+            <button type="button" onclick="setGoals()">Set Goals</button>
+        </form>
+    </div>
+
+    <script>
+        function setGoals() {
+            var exerciseGoal = document.getElementById('exerciseGoal').value;
+            var calorieGoal = document.getElementById('calorieGoal').value;
+
+            // You can add further logic here, like storing goals in a database or displaying a confirmation message.
+            alert('Goals set successfully!\nExercise Goal: ' + exerciseGoal + ' minutes\nCalorie Goal: ' + calorieGoal + ' calories');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User authentication</title>
+    <style>
+       body {
+        margin:0;
+        font-family: Arial, Helvetica, sans-serif;
+       }
+       .topnavbar {
+        background-color: #8FEBF0;
+        position:absolute;
+        width:100%;
+       }
+    </style>
+</head>
+<body>
+
+    <div id="login-container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+
+            <button type="button" onclick="login()">Login</button>
+        </form>
+    </div>
+
+    <script>
+        function login() {
+            // For simplicity, hardcoding a username and password here
+            const validUsername = "user123";
+            const validPassword = "pass123";
+
+            const enteredUsername = document.getElementById("username").value;
+            const enteredPassword = document.getElementById("password").value;
+
+            if (enteredUsername === validUsername && enteredPassword === validPassword) {
+                alert("Login successful!");
+                // You can redirect the user or perform other actions here
+            } else {
+                alert("Invalid username or password. Please try again.");
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition Recomendation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #recommendation {
+            text-align: center;
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>GetMovePro</h1>
+    </header>
+    
+    <main>
+        <div id="recommendation">
+            <h2>Nutrition Recommendations</h2>
+            <button onclick="getRecommendation()">Get Recommendation</button>
+            <p id="recommendationText"></p>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Your footer content goes here -->
+    </footer>
+
+    <script>
+        function getRecommendation() {
+            // Get user input (you might want to replace these prompts with input fields)
+            const age = prompt("Enter your age:");
+            const gender = prompt("Enter your gender (male/female):");
+            const activityLevel = prompt("Enter your activity level (sedentary/light/moderate/active/very active):");
+
+            // Call a function to calculate nutrition recommendation based on input
+            const recommendation = calculateRecommendation(age, gender, activityLevel);
+
+            // Display the recommendation
+            document.getElementById("recommendationText").innerText = recommendation;
+        }
+
+        function calculateRecommendation(age, gender, activityLevel) {
+            // Your nutrition calculation logic goes here
+            // This is just a placeholder example, you would need to replace it with your own calculations
+            const baseCalories = 2000; // Placeholder value
+            let multiplier;
+
+            switch (activityLevel.toLowerCase()) {
+                case "sedentary":
+                    multiplier = 1.2;
+                    break;
+                case "light":
+                    multiplier = 1.375;
+                    break;
+                case "moderate":
+                    multiplier = 1.55;
+                    break;
+                case "active":
+                    multiplier = 1.725;
+                    break;
+                case "very active":
+                    multiplier = 1.9;
+                    break;
+                default:
+                    multiplier = 1.4; // Default multiplier
+                    break;
+            }
+
+            const totalCalories = Math.round(baseCalories * multiplier);
+
+            return `Based on your input, your daily calorie recommendation is approximately ${totalCalories} calories.`;
+        }
+    </script>
+</body>
+</html>

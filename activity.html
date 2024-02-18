@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        #activity-display {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>GetMovePro</h1>
+
+    <button onclick="startActivity()">Start Activity</button>
+    <button onclick="stopActivity()">Stop Activity</button>
+
+    <div id="activity-display">Activity: None</div>
+
+    <script>
+        let isTracking = false;
+        function startActivity() {
+            if (!isTracking) {
+                isTracking = true;
+                updateActivityDisplay('Running');  // Replace with your activity type
+            }
+        }
+       
+
+        function updateActivityDisplay(activity) {
+            document.getElementById('activity-display').textContent = 'Activity: ' + activity;
+        }
+    </script>
+</body>
+</html>

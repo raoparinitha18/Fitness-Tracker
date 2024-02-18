@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress analytics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>GetMovePro</h1>
+    </header>
+    <main>
+        <div id="progress-container">
+            <h3>Walking</h3>
+            <label for="progress">Progress:</label>
+            <progress id="progress" max="100" value="0"></progress>
+            <span id="progress-value">0%</span>
+            <h3>Running</h3>
+            <label for="progress">Progress:</label>
+            <progress id="progress" max="100" value="0"></progress>
+            <span id="progress-value">0%</span>
+            <h3>Cycling</h3>
+            <label for="progress">Progress:</label>
+            <progress id="progress" max="100" value="0"></progress>
+            <span id="progress-value">0%</span>
+        </div>
+        
+        <br>
+        <br>
+        <button onclick="updateProgress()">Update Progress</button>
+    </main>
+    <footer>
+        <!-- Your footer content goes here -->
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

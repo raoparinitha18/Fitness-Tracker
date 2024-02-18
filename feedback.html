@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback and Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #feedback-form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        #report-section {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="feedback-form">
+        <h2>Feedback</h2>
+        <form id="feedbackForm">
+            <label for="feedback">Your Feedback:</label>
+            <textarea id="feedback" name="feedback" rows="4" required></textarea>
+            <br>
+            <button type="button" onclick="submitFeedback()">Submit Feedback</button>
+        </form>
+    </div>
+
+    <div id="report-section">
+        <h2>Generate Report</h2>
+        <button onclick="generateReport()">Generate Report</button>
+        <p id="reportResult"></p>
+    </div>
+
+    <script>
+        function submitFeedback() {
+            var feedback = document.getElementById('feedback').value;
+            // You can process the feedback here (e.g., send it to a server or store it locally).
+            alert('Feedback submitted: ' + feedback);
+            // Optionally, you can clear the form after submission
+            document.getElementById('feedbackForm').reset();
+        }
+
+        function generateReport() {
+            // Logic to generate and display a fitness report
+            var reportResult = "Your fitness report is generated. Check your email for details.";
+            document.getElementById('reportResult').innerText = reportResult;
+        }
+    </script>
+</body>
+</html>

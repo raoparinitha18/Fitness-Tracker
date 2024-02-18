@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calories Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>GetMovePro</h1>
+
+    <form id="calorieForm">
+        <label for="meal">Meal:</label>
+        <input type="text" id="meal" required>
+
+        <label for="calories">Calories:</label>
+        <input type="number" id="calories" required>
+
+        <button type="button" onclick="addMeal()">Add Meal</button>
+    </form>
+
+    <h2>Meal Log</h2>
+    <ul id="mealList"></ul>
+
+    <p>Total Calories: <span id="totalCalories">0</span></p>
+
+    <script>
+        let totalCalories = 0;
+
+        function addMeal() {
+            const mealInput = document.getElementById('meal');
+            const caloriesInput = document.getElementById('calories');
+            const meal = mealInput.value;
+            const calories = parseInt(caloriesInput.value);
+
+            if (meal && !isNaN(calories)) {
+                const mealList = document.getElementById('mealList');
+                const listItem = document.createElement('li');
+                listItem.textContent = `${meal}: ${calories} calories`;
+                mealList.appendChild(listItem);
+
+                totalCalories += calories;
+                document.getElementById('totalCalories').textContent = totalCalories;
+
+                // Clear input fields
+                mealInput.value = '';
+                caloriesInput.value = '';
+            } else {
+                alert('Please enter valid meal and calories.');
+            }
+        }
+    </script>
+</body>
+</html>
